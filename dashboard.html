@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>Restaurant dashboard | VendorLift</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="community.css">
+    <script src="auth.js?v=auth-gate" defer></script>
+    <script src="community.js" defer></script>
+</head>
+<body data-auth-required="restaurant">
+    <header class="community-header">
+        <a class="brand" href="index.html" aria-label="VendorLift home">
+            <span class="brand-mark" aria-hidden="true">V</span>
+            <span>VendorLift</span>
+        </a>
+        <nav class="community-nav" aria-label="Main navigation">
+            <a href="dashboard.html" aria-current="page">Dashboard</a>
+            <a href="feed.html">Restaurant feed</a>
+            <a href="forms.html">Edit profile</a>
+        </nav>
+    </header>
+
+    <main class="community-main" data-owner-dashboard>
+        <section class="community-heading">
+            <p class="eyebrow">Restaurant owner · demo</p>
+            <h1>Welcome, <span data-restaurant-name>The Green Kitchen</span></h1>
+            <p>Share updates with customers and see how your posts are doing.</p>
+        </section>
+        <p class="demo-notice">Demo mode: posts and activity are saved only in this browser. Sign-in and shared restaurant data are not connected to a server yet.</p>
+
+        <div class="dashboard-grid">
+            <section class="community-card" aria-labelledby="create-post-title">
+                <h2 id="create-post-title">Share an update</h2>
+                <p class="community-card-intro">Tell customers about a new dish, special offer, or what's happening today.</p>
+                <form class="post-composer" data-post-form>
+                    <div class="community-field">
+                        <label for="post-caption">Your update</label>
+                        <textarea id="post-caption" name="caption" maxlength="1000" placeholder="What's happening at your restaurant?" required></textarea>
+                    </div>
+                    <div class="community-field">
+                        <label for="post-photo">Photo URL <span class="optional">(optional)</span></label>
+                        <input id="post-photo" name="photoUrl" type="url" inputmode="url" placeholder="https://example.com/your-food-photo.jpg">
+                        <p class="community-help">Use an image address that starts with http:// or https://.</p>
+                    </div>
+                    <p class="community-message" data-dashboard-message role="status" aria-live="polite"></p>
+                    <button class="community-submit" type="submit">Publish update</button>
+                </form>
+
+                <div class="dashboard-stats" aria-label="Restaurant activity">
+                    <div class="stat-tile"><strong data-post-count>0</strong><span>Your posts</span></div>
+                    <div class="stat-tile"><strong data-like-count>0</strong><span>Likes</span></div>
+                    <div class="stat-tile"><strong data-comment-count>0</strong><span>Comments</span></div>
+                </div>
+            </section>
+
+            <aside class="community-card" aria-labelledby="recent-posts-title">
+                <h2 id="recent-posts-title">Your recent updates</h2>
+                <p class="community-card-intro">Your three latest posts and their activity.</p>
+                <div class="recent-post-list" data-recent-posts></div>
+                <nav class="quick-links" aria-label="Restaurant shortcuts">
+                    <a href="feed.html"><span>See the restaurant feed</span><span aria-hidden="true">→</span></a>
+                    <a href="forms.html"><span>Update restaurant details</span><span aria-hidden="true">→</span></a>
+                    <a href="menu.html"><span>Manage dishes</span><span aria-hidden="true">→</span></a>
+                </nav>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">© <span data-current-year></span> VendorLift</footer>
+</body>
+</html>

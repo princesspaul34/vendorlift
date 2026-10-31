@@ -1,0 +1,119 @@
+.role-layout {
+  width: min(680px, calc(100% - 48px));
+  margin: auto;
+  padding: 48px 0 72px;
+}
+
+.role-panel {
+  padding: clamp(28px, 6vw, 52px);
+  border: 1px solid rgba(213, 182, 65, 0.32);
+  border-radius: 22px;
+  background: linear-gradient(155deg, rgba(11, 33, 70, 0.99), rgba(6, 21, 46, 0.99));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+.role-panel h1 {
+  margin: 0;
+  color: var(--vl-white);
+  font-size: clamp(32px, 6vw, 46px);
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.role-intro {
+  margin: 14px 0 28px;
+  color: var(--vl-muted);
+}
+
+.role-options {
+  display: grid;
+  gap: 14px;
+}
+
+.role-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid rgba(213, 182, 65, 0.3);
+  border-radius: 14px;
+  background: rgba(4, 17, 39, 0.55);
+  color: var(--vl-white);
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.role-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--vl-gold-soft);
+  background: rgba(4, 17, 39, 0.85);
+}
+
+.role-card:focus-visible {
+  outline: 3px solid var(--vl-gold);
+  outline-offset: 3px;
+}
+
+.role-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(213, 182, 65, 0.58);
+  border-radius: 13px;
+  background: rgba(213, 182, 65, 0.1);
+  color: var(--vl-gold-soft);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.role-copy {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.role-copy strong {
+  font-size: 16px;
+}
+
+.role-copy > span {
+  color: var(--vl-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.role-arrow {
+  color: var(--vl-gold-soft);
+  font-size: 21px;
+  transition: transform 160ms ease;
+}
+
+.role-card:hover .role-arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 480px) {
+  .role-layout {
+    width: min(100% - 32px, 460px);
+    padding: 24px 0 42px;
+  }
+
+  .role-panel {
+    padding: 27px 22px;
+    border-radius: 17px;
+  }
+
+  .role-card {
+    grid-template-columns: 42px minmax(0, 1fr) 18px;
+    gap: 12px;
+    padding: 15px 12px;
+  }
+
+  .role-icon {
+    width: 42px;
+    height: 42px;
+  }
+}

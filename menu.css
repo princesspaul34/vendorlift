@@ -1,0 +1,158 @@
+.menu-layout {
+  width: min(820px, calc(100% - 48px));
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover,
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.dish-list {
+  display: grid;
+  gap: 20px;
+}
+
+.dish-card {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.dish-legend {
+  padding: 0 8px 0 0;
+  color: var(--navy);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.remove-dish {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #a12e37;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.dish-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field-hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.dish-card input[type="file"] {
+  min-height: 0;
+  padding: 10px;
+  background: #f7f9fc;
+}
+
+.dish-card input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--navy);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.image-preview {
+  width: min(100%, 280px);
+  max-height: 190px;
+  margin-top: 8px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.secondary-button,
+.back-button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--blue);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.secondary-button {
+  margin-top: 18px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.form-actions .submit-button {
+  min-width: 160px;
+}
+
+.remove-dish:focus-visible,
+.secondary-button:focus-visible,
+.back-link:focus-visible,
+.back-button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .menu-layout {
+    width: calc(100% - 32px);
+  }
+
+  .dish-card {
+    padding: 20px 16px;
+  }
+
+  .dish-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .form-actions .submit-button,
+  .back-button {
+    width: 100%;
+  }
+}

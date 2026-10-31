@@ -1,0 +1,241 @@
+:root {
+  color-scheme: light;
+  --blue: #003399;
+  --navy: #06152e;
+  --muted: #52617a;
+  --line: #dce3ee;
+  --gold: #d5b641;
+  --surface: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 8% 32%, rgba(0, 51, 153, 0.07), transparent 34rem),
+    radial-gradient(ellipse at 92% 78%, rgba(213, 182, 65, 0.08), transparent 28rem),
+    #f7f9fc;
+  color: var(--navy);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.site-header {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--blue);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #164db8, var(--blue));
+  box-shadow: 0 5px 14px rgba(0, 51, 153, 0.2);
+  color: var(--surface);
+  font-size: 17px;
+  line-height: 1;
+}
+
+.form-layout {
+  width: min(760px, calc(100% - 48px));
+  margin: 12px auto 64px;
+}
+
+.form-card {
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid rgba(6, 21, 46, 0.08);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 24px 70px rgba(6, 21, 46, 0.1);
+}
+
+.card-heading {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+  content: "";
+}
+
+.card-heading h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(28px, 5vw, 38px);
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+}
+
+.card-heading > p:last-child {
+  max-width: 540px;
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 18px;
+}
+
+.field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.optional {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: var(--surface);
+  color: var(--navy);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #8490a3;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 51, 153, 0.12);
+}
+
+.submit-button {
+  min-height: 50px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--blue);
+  color: var(--surface);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.submit-button:hover {
+  background: #062b78;
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.submit-button:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    width: calc(100% - 36px);
+    padding: 20px 0;
+  }
+
+  .form-layout {
+    width: calc(100% - 32px);
+    margin: 8px auto 32px;
+  }
+
+  .form-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .card-heading {
+    margin-bottom: 24px;
+  }
+
+  .form-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .field-full {
+    grid-column: auto;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

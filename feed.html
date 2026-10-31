@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>Restaurant feed | VendorLift</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="community.css">
+    <script src="auth.js?v=auth-gate" defer></script>
+    <script src="community.js" defer></script>
+</head>
+<body data-auth-required="any">
+    <header class="community-header">
+        <a class="brand" href="index.html" aria-label="VendorLift home">
+            <span class="brand-mark" aria-hidden="true">V</span>
+            <span>VendorLift</span>
+        </a>
+        <nav class="community-nav" aria-label="Main navigation">
+            <a href="feed.html" aria-current="page">Restaurant feed</a>
+            <a href="dashboard.html">Owner dashboard</a>
+            <a href="index.html">Account types</a>
+        </nav>
+    </header>
+
+    <main class="community-main" data-community-feed>
+        <div class="feed-layout">
+            <section class="community-heading">
+                <p class="eyebrow">Good food, shared</p>
+                <h1>Restaurant feed</h1>
+                <p>Explore restaurant updates, share your thoughts, and save places you want to visit.</p>
+            </section>
+            <p class="demo-notice">Demo mode: likes, comments, and saved restaurants stay in this browser. Anyone with the owner dashboard can publish demo posts until real account authentication is connected.</p>
+
+            <div class="feed-toolbar">
+                <label class="sr-only" for="feed-search">Search restaurants and updates</label>
+                <input class="feed-search" id="feed-search" data-feed-search type="search" placeholder="Search restaurants and updates">
+                <button class="post-action" data-saved-filter type="button" aria-pressed="false">Saved restaurants</button>
+            </div>
+            <p class="community-message" data-feed-message role="status" aria-live="polite"></p>
+            <section class="feed-list" data-feed-list aria-label="Restaurant updates"></section>
+        </div>
+    </main>
+
+    <footer class="site-footer">© <span data-current-year></span> VendorLift</footer>
+</body>
+</html>

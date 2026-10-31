@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>Restaurant details | VendorLift</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="VendorLift home">
+            <span class="brand-mark" aria-hidden="true">V</span>
+            <span>VendorLift</span>
+        </a>
+    </header>
+    <main class="form-layout">
+        <section class="form-card" aria-labelledby="form-title">
+            <div class="card-heading">
+                <p class="eyebrow">Restaurant profile</p>
+                <h1 id="form-title">Add your restaurant details</h1>
+                <p>Share a few details so customers can find out more about your restaurant.</p>
+            </div>
+
+            <form id="restaurant-form">
+                <div class="form-fields">
+                    <div class="field">
+                        <label for="resturantName">Restaurant name</label>
+                        <input type="text" id="resturantName" name="resturantName" placeholder="e.g. The Green Kitchen">
+                    </div>
+                    <div class="field">
+                        <label for="resturantLocation">Restaurant location</label>
+                        <input type="text" id="resturantLocation" name="resturantLocation" placeholder="Street, city, or neighborhood">
+                    </div>
+                    <div class="field">
+                        <label for="resturantEmail">Email address</label>
+                        <input type="email" id="resturantEmail" name="resturantEmail" placeholder="you@restaurant.com">
+                    </div>
+                    <div class="field">
+                        <label for="resturantPhone">Phone number</label>
+                        <input type="tel" id="resturantPhone" name="resturantPhone" placeholder="Your restaurant's phone number">
+                    </div>
+                    <div class="field">
+                        <label for="resturantWebsite">Website <span class="optional">(optional)</span></label>
+                        <input type="url" id="resturantWebsite" name="resturantWebsite" placeholder="https://example.com">
+                    </div>
+                    <div class="field">
+                        <label for="resturantCuisineType">Cuisine type</label>
+                        <input type="text" id="resturantCuisineType" name="resturantCuisineType" placeholder="e.g. Italian, Caribbean, or vegan">
+                    </div>
+                    <div class="field field-full">
+                        <label for="resturantDescription">Description</label>
+                        <textarea id="resturantDescription" name="resturantDescription" rows="4" placeholder="Tell customers what makes your restaurant special"></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="resturantOpeningHours">Opening time</label>
+                        <input type="text" id="resturantOpeningHours" name="resturantOpeningHours" placeholder="e.g. 9:00 AM">
+                    </div>
+                    <div class="field">
+                        <label for="resturantClosingHours">Closing time</label>
+                        <input type="text" id="resturantClosingHours" name="resturantClosingHours" placeholder="e.g. 10:00 PM">
+                    </div>
+                    <button class="submit-button field-full" type="submit">Submit restaurant details</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="forms.js" defer></script>
+</body>
+</html>
